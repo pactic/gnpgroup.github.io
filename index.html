@@ -1,0 +1,631 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>GNP Group</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/blue.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/animate.min.css" rel="stylesheet" type="text/css"/>
+<!----font-Awesome----->
+   	<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!-- start plugins -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--start slider -->
+    <script src="js/jquery-ui.min.js"></script>
+<!--end slider -->
+<!-- must have -->
+<!--[if IE]><script src="js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
+<!-- Owl Carousel Assets -->
+<link href="css/owl.carousel.css" rel="stylesheet">
+<script src="js/owl.carousel.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$("#owl-demo").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					autoPlay : true,
+					navigation : true,
+					navigationText : ["", ""],
+					rewindNav : false,
+					scrollPerPage : false,
+					pagination : false,
+					paginationNumbers : false,
+				});
+
+			});
+		</script>
+		<!-- //Owl Carousel Assets -->
+<!-- start circle -->
+<script>
+(function($){
+	$.fn.percentPie = function(options){
+
+		var settings = $.extend({
+			width: 100,
+			trackColor: "EEEEEE",
+			barColor: "E2534B",
+			barWeight: 30,
+			startPercent: 0,
+			endPercent: 1,
+			fps: 60
+		}, options);
+
+		this.css({
+			width: settings.width,
+			height: settings.width
+		});
+
+		var	that = this,
+			hoverPolice = false,
+			canvasWidth = settings.width,
+			canvasHeight = canvasWidth,
+			id = $('canvas').length,
+			canvasElement = $('<canvas id="'+ id +'" width="' + canvasWidth + '" height="' + canvasHeight + '"></canvas>'),
+			canvas = canvasElement.get(0).getContext("2d"),
+			centerX = canvasWidth/2,
+			centerY = canvasHeight/2,
+			radius = settings.width/2 - settings.barWeight/2;
+			counterClockwise = false,
+			fps = 1000 / settings.fps,
+			update = .01;
+			this.angle = settings.startPercent;
+
+		this.drawArc = function(startAngle, percentFilled, color){
+			var drawingArc = true;
+			canvas.beginPath();
+			canvas.arc(centerX, centerY, radius, (Math.PI/180)*(startAngle * 360 - 90), (Math.PI/180)*(percentFilled * 360 - 90), counterClockwise);
+			canvas.strokeStyle = color;
+			canvas.lineWidth = settings.barWeight;
+			canvas.stroke();
+			drawingArc = false;
+		}
+
+		this.fillChart = function(stop){
+			var loop = setInterval(function(){
+				hoverPolice = true;
+				canvas.clearRect(0, 0, canvasWidth, canvasHeight);
+
+				that.drawArc(0, 360, settings.trackColor);
+				that.angle += update;
+				that.drawArc(settings.startPercent, that.angle, settings.barColor);
+
+				if(that.angle > stop){
+					clearInterval(loop);
+					hoverPolice = false;
+				}
+			}, fps);
+		}
+
+		this.mouseover(function(){
+			if(hoverPolice == false){
+				that.angle = settings.startPercent;
+				that.fillChart(settings.endPercent);
+			}
+		});
+
+		this.fillChart(settings.endPercent);
+		this.append(canvasElement);
+		return this;
+	}
+}(jQuery));
+
+$(document).ready(function() {
+
+	$('.google').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "76C7C0",
+		barWeight: 20,
+		endPercent: .9,
+		fps: 60
+	});
+  
+  $('.moz').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "76C7C0",
+		barWeight: 20,
+		endPercent: .75,
+		fps: 60
+	});
+  
+  $('.safari').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "#76C7C0",
+		barWeight: 20,
+		endPercent: .5,
+		fps: 60
+	});
+    
+});
+</script>
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="header_bg">
+<div class="container">
+	<div class="header">
+		<div class="logo">
+			<a href="Index.html"><img src="images/logo.jpg" alt="logo" width="180" height="100"/></a>
+		</div>
+		<div class="h_menu">
+		<a id="touch-menu" class="mobile-menu" href="#">Menu</a>
+		<nav>
+		<ul class="menu list-unstyled">
+			<li class="activate"><a href="Index.html">HOME</a></li>
+			<li><a href="about.html">ABOUT</a>
+			<ul class="sub-menu list-unstyled">
+			    <li><a href="team.html">OUR TEAM</a></li>
+				<li><a href="client.html">OUR CLIENT</a></li>
+			</ul>
+			</li>	 
+			<li><a href="#">services</a>
+			<ul class="sub-menu list-unstyled">
+			<li><a href="construction.html">Construction</a></li>
+			<li><a href="consulting.html">Consulting</a></li>
+			<li><a href="#">trading</a></li>
+			</ul>
+			</li>
+			<li><a href="#">Project</a>
+			<ul class="sub-menu list-unstyled">
+				<li><a href="#">Construction</a>
+				     <ul class="sub-menu list-unstyled">
+						<li><a href="#">Commerical</a>
+						    <ul class="sub-menu list-unstyled">
+							<li><a href="comgalaxy.html">GNP Galaxy</a></li>
+							<li><a href="arcadia.html">GNP Arcadia</a></li>
+							<li><a href="galleria.html">GNP Galleria</a></li>
+						    </ul>
+						</li>	
+						<li><a href="#">Industrial</a>
+						<ul class="sub-menu list-unstyled">
+							<li><a href="comgalaxy.html">GNP Galaxy</a></li>
+							<li><a href="solitaire.html">Solitaire Industrial Estate</a></li>
+						</ul>
+						</li>
+					    <li><a href="#">Residential</a>
+						<ul class="sub-menu list-unstyled">
+							<li><a href="tycoons.html">Tycoons Residency</a></li>
+							<li><a href="anand.html">Anand Greens </a></li>
+						</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="http://gnpconsultancy.com/" target="_blank">Consultancy</a></li>
+				<li><a href="#">Hospitality</a>
+				<ul class="sub-menu list-unstyled">
+							<li><a href="spring.html">Springtime Club </a></li>
+						</ul>
+						</li>
+				<li><a href="#">Health Care</a></li>
+					
+			</ul>
+			</li>
+			<li><a href="#">Career</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+		</ul>
+		</nav>
+		<script src="js/menu.js" type="text/javascript"></script>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+    <!--slider -->
+	<div class="slider">
+	    <div class="callbacks_container">
+	      <ul class="rslides" id="slider">
+	        <li>
+	          <img src="images/2.png" alt="">
+	          <!--<div class="caption">
+	          	<h3>I WANT TO FEEL WHAT YOU WANTED!</h3>
+	          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. consectetur adipiscing elit.</p>
+	          </div>-->
+	        </li>
+	        <li>
+	          <img src="images/3.png" alt="">
+	        	 <!--<div class="caption">
+	          	<h3>I WANT TO FEEL WHAT YOU WANTED!</h3>
+	          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. consectetur adipiscing elit.</p>
+	          </div>-->
+	        </li>
+			<li>
+	          <img src="images/4.png" alt="">
+	        	 <!--<div class="caption">
+	          	<h3>I WANT TO FEEL WHAT YOU WANTED!</h3>
+	          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. consectetur adipiscing elit.</p>
+	          </div>-->
+	        </li>
+			<li>
+	          <img src="images/5.png" alt="">
+	        	 <!--<div class="caption">
+	          	<h3>I WANT TO FEEL WHAT YOU WANTED!</h3>
+	          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. consectetur adipiscing elit.</p>
+	          </div>-->
+	        </li>
+	      </ul>
+	  </div>
+	 </div>
+	</div>
+    <!--/slider -->
+	
+<div class="main_bg">
+<div class="container">
+<div class="main slider_text text-center" style="padding-bottom:0px;">
+<h4>GNP Group is a multi business conglomerate with expansive reach in construction, consultancy, trading, hospitality, health care and many more.</h4>
+</div>
+<div class="main about span_of_3">
+
+<div class="col-md-3 span1_of_3">
+<h2 align="justify">Construction</h2>
+			<div class="clients1">
+				<p style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#666666" >We specialize in the construction of Commercial , Industrial and Residential Real Estate Projects, with a legacy in building large and complex structures for industrial, commercial as well as residential purposes over 15 years. </p>
+		    </div>
+			
+</div>
+
+<div class="col-md-3 span1_of_3">
+<h4>Consulting</h4>
+			<div class="clients1">
+				<p style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#666666">We are one of the trustworthy firms, involved in offering a wide gamut of Liaison Services to our clients. Our professionals make genuine efforts to provide this service within the promised set of time span. Apart from this, excellent association with MIDC, M.S.E.D.C.L & PWD Liaison officials of PWD and MSEDCL enable us to provide our patrons with efficient services. </p>
+			</div>
+</div>
+
+
+<div class="col-md-3 span1_of_3">
+<h4>Trading</h4>
+			<div class="clients1">
+				<p style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#666666">GNP has emerged as fore-runner in trading of T.D.R. and is the most trusted name in Maharashtra for providing Industrial Plots( GNP do trading of all MIDC plots, Industries / factories , constructed sites / Building etc )  </p>
+			</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="main_bg">
+<div class="container">
+<div class="tab_img">
+												<div class="img-top1 ">
+												    <a href="#"   rel="title" class="b-link-stripe b-animate-go  swipebox">
+													<img src="images/news.png" class="img-responsive" alt=""/>
+														<div class="b-wrapper">
+															<ul class="b-animate b-from-left    b-delay03 ">
+																	<li><H3>NEWS UPDATE</H3></li>
+															 </ul>
+														</div>
+												    </a>
+												</div>
+												
+												<div class="img-top1 ">
+												    <a href="#" rel="title" class="b-link-stripe b-animate-go  swipebox">
+													<img src="images/testimonial.png" class="img-responsive" alt=""/>
+														<div class="b-wrapper">
+															<ul class="b-animate b-from-left    b-delay03 ">
+																	<li><H3>TESTIMONIALS</H3></li>
+															 </ul>
+														</div>
+												    </a>
+												</div>
+												
+												<div class="img-top1 ">
+												    <a href="gallery.html" rel="title" class="b-link-stripe b-animate-go  swipebox">
+													<img src="images/galaxy1.png" class="img-responsive" alt=""/>
+														<div class="b-wrapper">
+															<ul class="b-animate b-from-left    b-delay03 ">
+																	<li><H3>GALLERY/ MEDIA</H3></li>
+															 </ul>
+														</div>
+												    </a>
+												</div>
+</div>
+</div>
+</div>
+
+
+
+	
+	
+<!--<div class="main_bg"><!-- start main 
+<div class="container">
+	<div class="main_grid">
+		<!--<div class="top_grid"><!-- start top_grid 
+				<div class="col-md-10 span1_of_1">
+						<h3>some of our top services</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+				</div>
+				<div class="col-md-2 span1_of_2">
+					<a class="btn" href="single-page.html">view more</a>
+				</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="span_of_4"><!-- start span_of_4 
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span class="active"><i class="fa fa-thumbs-o-up"></i></span>
+					<h3>suspendisse</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<div class="read_more">
+						<a class="btn btn-2 active" href="single-page.html">view more</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span><i class="fa fa-lock"></i></span>
+					<h3>maecenas</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<div class="read_more">
+						<a class="btn  btn-2b" href="single-page.html">view more</a>
+					</div>	
+				</div>	
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span><i class="fa fa-flag"></i></span>
+					<h3>aliquam</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<div class="read_more">
+						<a class="btn btn-2b" href="single-page.html">view more</a>
+					</div>		
+				</div>
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span><i class="fa fa-flask"></i></span>
+					<h3>habitasse</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<div class="read_more">
+						<a class="btn btn-2b" href="single-page.html">view more</a>
+					</div>						
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div><!-- end span_of_4
+	</div>
+</div>
+</div> 
+<div class="main1_bg"><!-- start main1 
+<div class="container">
+	<div class="main slider_text texxt-center">
+		<h4>why modus versus</h4>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</div>
+</div>
+<!-- start banner no-responsive
+<div id="bannerBg">
+ <section id="dg-container" class="dg-container">
+			<div class="dg-wrapper">
+					<a href=""><img src="images/slider_pic1.jpg" alt="image1" /></a>
+					<a href=""><img src="images/slider_pic2.jpg" alt="image2" /></a>
+					<a href=""><img src="images/slider_pic3.jpg" alt="image3" /></a>
+					<a href=""><img src="images/slider_pic4.jpg" alt="image4" /></a>
+					<a href=""><img src="images/slider_pic5.jpg" alt="image5" /></a>
+					<a href=""><img src="images/slider_pic3.jpg" alt="image1" /></a>
+					<a href=""><img src="images/slider_pic4.jpg" alt="image2" /></a>
+					<a href=""><img src="images/slider_pic5.jpg" alt="image3" /></a>			</div>
+	</section>
+<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+<script type="text/javascript" src="js/jquery.gallery.js"></script>
+<script type="text/javascript">
+		$(function() {
+		$('#dg-container').gallery({
+		autoplay	:	true
+	});
+});
+</script>
+</div>
+ <!-- end banner no-responsive 
+
+</div>
+<div class="main_btm"><!-- start main_btm 
+<div class="container">
+	<div class="main span_of_3">
+		<div class="col-md-3 span1_of_3">
+			<h4>why choose us?</h4>
+			<ul class="list-unstyled nav_list">
+				<li><a href="#">Lorem ipsum dolor sit amet, consectetur</a></li>
+				<li><a href="#">Nullam nec sapien eget metus</a></li>
+				<li><a href="#">Curabitur pellentesque mauris tempor </a></li>
+				<li><a href="#">Mauris dictum neque ornare nibh feugiat</a></li>
+				<li><a href="#">Lorem ipsum dolor sit amet, consectetur</a></li>
+				<li><a href="#">Nullam nec sapien eget metus</a></li>
+				<li><a href="#">Curabitur pellentesque mauris tempor </a></li>
+				<li><a href="#">Curabitur pellentesque mauris tempor </a></li>
+				<li><a href="#">Mauris dictum neque ornare nibh feugiat</a></li>
+				<li><a href="#">Lorem ipsum dolor sit amet, consectetur</a></li>
+			</ul>
+		</div>	
+		<div class="col-md-6 span1_of_3">
+			<h5>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,<span>randomised words which don't </span> look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </h5>
+				<!-- start circle 
+				<ul class="list-unstyled circle_list">
+					<li>
+						<div class="safari chart">
+						  <div class="tag">50%</div>
+						</div>			
+						<h4 class="style">meier</h4>			
+					</li>
+					<li>
+						<div class="moz chart">
+						  <div class="tag">75%</div>
+						</div>			
+						<h4 class="style">johnson</h4>			
+					</li>
+					<li>
+						<div class="google chart">
+						  <div class="tag">90%</div>
+						</div>	
+						<h4 class="style">junghanns</h4>					
+					</li>
+				</ul>
+				<!-- end circle 
+		</div>	
+		<div class="col-md-3 span1_of_3">
+			<h4>what client's say ?</h4>
+			<div class="clients">
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos </p>
+			</div>
+			
+		</div>-->
+		<div class="clearfix"></div>
+	<!--</div>-->
+	<div class="cau_hide">
+	<div class="cursual"><!--  start cursual  -->
+		<h4>Our happy clients<span class="line"></span></h4>
+	</div>
+	<div id="owl-demo" class="owl-carousel"><!----start-img-cursual-->
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/rotexfinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/sparkletfinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/reliablefinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/viswantfinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/sparklet.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/zaverifinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/pumpfinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>	
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/acharyafinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>	
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/client logo/assbfinal.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		
+	</div><!----//End-img-cursual
+	</div>
+</div>
+</div>
+<div class="footer_bg"><!-- start footer 
+<div class="container">
+	<div class="footer">
+		<div class="col-md-4 footer1_of_3">
+			<div class="f_logo">
+				<a href="index.html"><img src="images/logo.png" alt=""/></a>
+			</div>		
+			<p class="f_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+			<p>Phone:&nbsp;<span>(00) 222 666 444</span></p>
+			<span class="">Email:&nbsp;<a href="mailto:info@mycompany.com">info(at)mycompany.com</a></span>
+		</div>
+		<div class="col-md-2 footer1_of_3">
+			<h4>company</h4>
+			<ul class="list-unstyled f_list">
+				<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+				<li><a href="#">Nullam nec sapien eget</a></li>
+				<li><a href="#">Curabitur pellentesque</a></li>
+				<li><a href="#">Mauris dictum neque</a></li>
+				<li><a href="#">Lorem ipsum dolor sit</a></li>
+				<li><a href="#">Nullam nec sapien</a></li>
+				<li><a href="#">Curabitur mauris tempor </a></li>
+			</ul>
+		</div>
+		<div class="col-md-2 footer1_of_3">
+			<h4>community</h4>
+			<ul class="list-unstyled f_list">
+				<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+				<li><a href="#">Nullam nec sapien eget</a></li>
+				<li><a href="#">Curabitur pellentesque</a></li>
+				<li><a href="#">Mauris dictum neque</a></li>
+				<li><a href="#">Lorem ipsum dolor sit</a></li>
+				<li><a href="#">Nullam nec sapien</a></li>
+				<li><a href="#">Curabitur mauris tempor </a></li>
+			</ul>
+		</div>
+		<div class="col-md-4 footer_of_3">
+			<h4>from the <span>blog</span></h4>
+			<div class="blog_list">
+				<div class="col-md-3 f_pic">
+					<a href="blog.html"><img src="images/blog_pic1.jpg" alt="" class="img-responsive"/></a>	
+				</div>
+				<div class="col-md-9 f_text">
+					<a href="blog.html"><p>Lorem Ipsum is simply dummy text of the this printing and typesetting industry.</p></a>
+					<span>26, may 2014</span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="blog_list">
+				<div class="col-md-3 f_pic">
+					<a href="blog.html"><img src="images/blog_pic2.jpg" alt="" class="img-responsive"/></a>
+				</div>
+				<div class="col-md-9 f_text">
+					<a href="blog.html"><p>Lorem Ipsum is simply dummy text of the this printing and typesetting industry.</p></a>
+					<span>17, June 2014</span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>-->
+<div class="footer1_bg"><!-- start footer1 -->
+<div class="container">
+	<div class="footer1">
+		<div class="copy pull-left" style="padding-top:20px">
+			<p class="link"><span> Copyright &copy;ISO 9001 : 2015 GNP Group . All Rights Reserved.</span></p>
+		</div>
+		<div class="soc_icons pull-right">
+			<ul class="list-unstyled text-center">
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+</body>
+</html>
